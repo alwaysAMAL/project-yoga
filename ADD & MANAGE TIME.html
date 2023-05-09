@@ -1,0 +1,32 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'EXPERT_MODULE/expertindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="213" border="1" class="table" >
+    <tr>
+      <th width="91" scope="row">USERNAME</th>
+      <td width="37">TIME</td>
+      <td width="40">DATE</td>
+      <td width="17">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i['first_name']}} {{i['last_name']}}</th>
+      <td>{{i['time']}}</td>
+      <td>{{i['date']}}&nbsp;</td>
+      <td><p><a href="ex_time_get?id={{i['id']}}#about">EDIT</a></p>
+      <p><a href="ex_time_delete?id={{i['id']}}#about">DELETE</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+
+<!--</html>-->
+{% endblock %}

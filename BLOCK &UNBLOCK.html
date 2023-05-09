@@ -1,0 +1,38 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'ADMIN_MODULE/adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+</form>
+<table width="200" border="1" class="table">
+  <tr>
+    <th scope="row">NAME</th>
+    <td>ADDRESS</td>
+    <td>EMAIL</td>
+    <td>PHONE </td>
+    <td>&nbsp;</td>
+  </tr>
+  {% for i in val %}
+  <tr>
+    <th scope="row">{{i['first_name']}} {{i['last_name']}}</th>
+    <td>{{i['place']}},{{i['post']}},{{i['pin']}}</td>
+    <td>{{i['mail_id']}}</td>
+    <td>{{i['phno']}}</td>
+    <td>
+      {% if i['type']=='user'%}
+      <p><a href="ad_block?id={{i['login_id']}}">BLOCK</a></p>
+      {% else %}
+      <p><a href="ad_unblock?id={{i['login_id']}}">UNBLOCK</a></p></td>
+      {% endif %}
+  </tr>
+  {% endfor %}
+</table>
+</body>
+<!--</html>-->
+{% endblock %}

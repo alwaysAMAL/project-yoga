@@ -1,0 +1,39 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'EXPERT_MODULE/expertindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table">
+    <tr>
+      <th scope="row">NAME</th>
+      <td>PHONE</td>
+      <td>EMAIL</td>
+      <td>ADDRESS</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">&nbsp;{{i['first_name']}} {{i['last_name']}}</th>
+      <td>{{i['phno']}}&nbsp;</td>
+      <td>&nbsp;{{i['mail_id']}}</td>
+      <td>&nbsp;&nbsp;{{i['place']}},{{i['post']}},&nbsp;{{i['pin']}}</td>
+      <td>{% if i['type']=='trainer'%}
+        <p><a href="ex_aswrk?id={{i['log_id']}}#about">ASSIGN</a></p>
+        {% elif i['type']=='rejected'%}rejected
+        {% else %}
+
+      <p><a href="ex_accept?id={{i['log_id']}}">ACCEPT</a></p>
+      <p><a href="ex_reject?id={{i['log_id']}}">REJECT</a></p>
+      {% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

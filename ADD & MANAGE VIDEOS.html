@@ -1,0 +1,31 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'EXPERT_MODULE/expertindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table">
+    <tr>
+      <th scope="row">DATE </th>
+      <td>VIDEO</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      {% for i in val %}
+      <th scope="row">{{i['date']}}</th>
+      <td><a href="../static/videos/{{i['video']}}" download>{{i['video']}}</a></td>
+      <td><p><a href="ex_av_delete?did={{i['id']}}">DELETE</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th colspan="3" scope="row"><a href="ex_av#about">ADD</a></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

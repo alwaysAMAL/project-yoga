@@ -1,0 +1,31 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'EXPERT_MODULE/expertindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="ex_time_update">
+  <table width="200" border="1" class="table">
+     <tr>
+      <th scope="row">TIME</th>
+      <td><label>
+        <input type="text" name="textfield"  value="{{val['time']}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">DATE</th>
+      <td><label>
+        <input type="text" name="textfield2" value="{{val['date']}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" value="UPDATE"  class="btn"></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
